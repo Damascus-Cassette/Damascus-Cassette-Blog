@@ -1,4 +1,9 @@
 ---
+title: "Home"
+layout: "home"
+slug: ""
+categories:
+    - Test
 menu:
     main:
         name: Home
@@ -6,3 +11,6 @@ menu:
         params:
             icon: home
 ---
+
+\<Home page contents\>
+

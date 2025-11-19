@@ -5,7 +5,7 @@
         <link>http://localhost:1313/categories/cat1/</link>
         <description>Recent content in Cat1 on Damascus Cassette Blog</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en</language>
+        <language>en-us</language>
         <copyright>Raymond L. Siewert</copyright>
         <lastBuildDate>Wed, 19 Nov 2025 11:07:23 -0500</lastBuildDate><atom:link href="http://localhost:1313/categories/cat1/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>My First Post</title>

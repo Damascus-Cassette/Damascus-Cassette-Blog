@@ -8,4 +8,6 @@ menu:
         weight: -70
         params: 
             icon: archives
+tags:
+    - Test1
 ---

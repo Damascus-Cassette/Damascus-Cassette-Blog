@@ -4,25 +4,32 @@ theme: stack
 title: Damascus Cassette Blog
 copyright: Raymond L. Siewert
 
-DefaultContentLanguage: en
-hasCJKLanguage: false
+# DefaultContentLanguage: en
+# hasCJKLanguage: false
 
-languages:
-    en:
-        languageName: English
-        title: Damascus Cassette Blog
-        weight: 1
-        params:
-            sidebar:
-                subtitle: A blog for all my personal projects!
+# languages:
+#     en:
+#         languageName: English
+#         title: Example Site
+#         weight: 1
+#         params:
+#             sidebar:
+#                 subtitle: Example description
+
+# services:
+#     # Change it to your Disqus shortname before using
+#     disqus:
+#         shortname: "hugo-theme-stack"
+#     # GA Tracking ID
+#     googleAnalytics:
+#         id:
 
 pagination:
-    pagerSize: 10
+    pagerSize: 3
 
 permalinks:
     post: /p/:slug/
     page: /:slug/
-
 
 params:
     mainSections:
@@ -39,28 +46,39 @@ params:
         published: Jan 02, 2006
         lastUpdated: Jan 02, 2006 15:04 MST
 
-    # sidebar:
-        # emoji: 🍥
-        # subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        # avatar:
-        #     enabled: true
-        #     local: true
-        #     src: img/avatar.png
+    sidebar:
+        emoji: 
+        subtitle: 
+        avatar:
+            enabled: false
+            local: true
+            src: img/avatar.png
 
     article:
         math: false
         toc: true
         readingTime: true
         license:
-            enabled: true
+            enabled: false
             default: Licensed under CC BY-NC-SA 4.0
+
+    comments:
+        enabled: false
+        provider: disqus
+
+        disqusjs:
+            shortname:
+            apiUrl:
+            apiKey:
+            admin:
+            adminLabel:
 
     widgets:
         homepage:
             - type: search
-            - type: archives
-              params:
-                  limit: 5
+            # - type: archives
+            #   params:
+            #       limit: 5
             - type: categories
               params:
                   limit: 10
@@ -70,8 +88,77 @@ params:
         page:
             - type: toc
 
+    # opengraph:
+    #     twitter:
+    #         # Your Twitter username
+    #         site:
+
+    #         # Available values: summary, summary_large_image
+    #         card: summary_large_image
+
+    defaultImage:
+        opengraph:
+            enabled: false
+            local: false
+            src:
+
+    colorScheme:
+        # Display toggle
+        toggle: true
+
+        # Available values: auto, light, dark
+        default: auto
+
+    imageProcessing:
+        cover:
+            enabled: true
+        content:
+            enabled: true
+
+### Custom menu
+### See https://stack.jimmycai.com/config/menu
+### To remove about, archive and search page menu item, remove `menu` field from their FrontMatter
+menu:
+    main: []
+
+    # social:
+        # - identifier: github
+        #   name: GitHub
+        #   url: https://github.com/CaiJimmy/hugo-theme-stack
+        #   params:
+        #       icon: brand-github
+
+        # - identifier: twitter
+        #   name: Twitter
+        #   url: https://twitter.com
+        #   params:
+        #       icon: brand-twitter
+
+related:
+    includeNewer: true
+    threshold: 60
+    toLower: false
+    indices:
+        - name: tags
+          weight: 100
+
+        - name: categories
+          weight: 200
+
 markup:
     goldmark:
+        # extensions:
+        #     passthrough:
+        #         enable: true
+        #         delimiters:
+        #             block:
+        #                 - - \[
+        #                   - \]
+        #                 - - $$
+        #                   - $$
+        #             inline:
+        #                 - - \(
+        #                   - \)
         renderer:
             ## Set to true if you have HTML content inside Markdown
             unsafe: true
