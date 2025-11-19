@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Cat1 on Damascus Cassette Blog</title>
+        <link>http://localhost:1313/categories/cat1/</link>
+        <description>Recent content in Cat1 on Damascus Cassette Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Raymond L. Siewert</copyright>
+        <lastBuildDate>Wed, 19 Nov 2025 11:07:23 -0500</lastBuildDate><atom:link href="http://localhost:1313/categories/cat1/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>My First Post</title>
+        <link>http://localhost:1313/posts/my-first-post/</link>
+        <pubDate>Wed, 19 Nov 2025 11:07:23 -0500</pubDate>
+        
+        <guid>http://localhost:1313/posts/my-first-post/</guid>
+        <description>&lt;h1 id=&#34;category&#34;&gt;Category
+&lt;/h1&gt;&lt;h2 id=&#34;category-1&#34;&gt;Category
+&lt;/h2&gt;&lt;p&gt;something&lt;/p&gt;
+&lt;h3 id=&#34;subcat&#34;&gt;Subcat
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;../my-first-post&#34; &gt;title&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

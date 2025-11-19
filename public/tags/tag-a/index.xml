@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Tag A on Damascus Cassette Blog</title>
+        <link>http://localhost:1313/tags/tag-a/</link>
+        <description>Recent content in Tag A on Damascus Cassette Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Raymond L. Siewert</copyright>
+        <lastBuildDate>Wed, 19 Nov 2025 11:07:23 -0500</lastBuildDate><atom:link href="http://localhost:1313/tags/tag-a/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>My Third Post</title>
+        <link>http://localhost:1313/my-thurd-post/</link>
+        <pubDate>Wed, 19 Nov 2025 11:07:23 -0500</pubDate>
+        
+        <guid>http://localhost:1313/my-thurd-post/</guid>
+        <description>&lt;p&gt;something&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,4 @@
+baseURL = 'https://DamascusCassette.org/'
+languageCode = 'en-us'
+title = 'Damascus Cassette Blog'
+theme = 'stack'

@@ -1,19 +1,43 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on My New Hugo Site</title>
-    <link>http://localhost:1313/posts/</link>
-    <description>Recent content in Posts on My New Hugo Site</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 19 Nov 2025 11:07:23 -0500</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>My First Post</title>
-      <link>http://localhost:1313/posts/my-first-post/</link>
-      <pubDate>Wed, 19 Nov 2025 11:07:23 -0500</pubDate>
-      <guid>http://localhost:1313/posts/my-first-post/</guid>
-      <description>&lt;p&gt;This is &lt;strong&gt;bold&lt;/strong&gt; text, and this is &lt;em&gt;emphasized&lt;/em&gt; text.&lt;/p&gt;&#xA;&lt;p&gt;Visit the &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; website!&lt;/p&gt;</description>
-    </item>
-  </channel>
+    <channel>
+        <title>Posts on Damascus Cassette Blog</title>
+        <link>http://localhost:1313/posts/</link>
+        <description>Recent content in Posts on Damascus Cassette Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Raymond L. Siewert</copyright>
+        <lastBuildDate>Wed, 19 Nov 2025 11:07:23 -0500</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>My First Post</title>
+        <link>http://localhost:1313/posts/my-first-post/</link>
+        <pubDate>Wed, 19 Nov 2025 11:07:23 -0500</pubDate>
+        
+        <guid>http://localhost:1313/posts/my-first-post/</guid>
+        <description>&lt;h1 id=&#34;category&#34;&gt;Category
+&lt;/h1&gt;&lt;p&gt;#something&lt;/p&gt;
+&lt;h2 id=&#34;category-1&#34;&gt;Category
+&lt;/h2&gt;&lt;p&gt;something&lt;/p&gt;
+&lt;h3 id=&#34;subcat&#34;&gt;Subcat
+&lt;/h3&gt;</description>
+        </item>
+        <item>
+        <title>My First Post</title>
+        <link>http://localhost:1313/posts/proposals/my-first-post/</link>
+        <pubDate>Wed, 19 Nov 2025 11:07:23 -0500</pubDate>
+        
+        <guid>http://localhost:1313/posts/proposals/my-first-post/</guid>
+        <description>&lt;p&gt;something&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>My First Post</title>
+        <link>http://localhost:1313/posts/workbench/my-first-post/</link>
+        <pubDate>Wed, 19 Nov 2025 11:07:23 -0500</pubDate>
+        
+        <guid>http://localhost:1313/posts/workbench/my-first-post/</guid>
+        <description>&lt;p&gt;something&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>
