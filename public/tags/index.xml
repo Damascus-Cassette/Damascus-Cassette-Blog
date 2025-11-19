@@ -15,30 +15,6 @@
         <guid>http://localhost:1313/tags/something1/</guid>
         <description></description>
         </item>
-        <item>
-        <title>Tag A</title>
-        <link>http://localhost:1313/tags/tag-a/</link>
-        <pubDate>Wed, 19 Nov 2025 11:07:23 -0500</pubDate>
-        
-        <guid>http://localhost:1313/tags/tag-a/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Tag B</title>
-        <link>http://localhost:1313/tags/tag-b/</link>
-        <pubDate>Wed, 19 Nov 2025 11:07:23 -0500</pubDate>
-        
-        <guid>http://localhost:1313/tags/tag-b/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Tag D</title>
-        <link>http://localhost:1313/tags/tag-d/</link>
-        <pubDate>Wed, 19 Nov 2025 11:07:23 -0500</pubDate>
-        
-        <guid>http://localhost:1313/tags/tag-d/</guid>
-        <description></description>
-        </item>
         
     </channel>
 </rss>

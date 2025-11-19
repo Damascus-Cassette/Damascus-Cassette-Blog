@@ -1,0 +1,8 @@
+{{ $file := .Get 0 }}
+```
+{{ (printf "%s%s" .Page.File.Dir $file) | readFile | replaceRE "^---[\\s\\S]+?---" "" | safeHTML }}
+```
+<!-- <summary>{{ $file | markdownify }}</summary> -->
+<!-- <details>
+</details> -->
+    

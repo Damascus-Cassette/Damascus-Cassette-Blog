@@ -15,22 +15,6 @@
         <guid>http://localhost:1313/categories/cat1/</guid>
         <description></description>
         </item>
-        <item>
-        <title>Category A</title>
-        <link>http://localhost:1313/categories/category-a/</link>
-        <pubDate>Wed, 19 Nov 2025 11:07:23 -0500</pubDate>
-        
-        <guid>http://localhost:1313/categories/category-a/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Category B</title>
-        <link>http://localhost:1313/categories/category-b/</link>
-        <pubDate>Wed, 19 Nov 2025 11:07:23 -0500</pubDate>
-        
-        <guid>http://localhost:1313/categories/category-b/</guid>
-        <description></description>
-        </item>
         
     </channel>
 </rss>
