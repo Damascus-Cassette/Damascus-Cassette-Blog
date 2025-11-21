@@ -36,6 +36,10 @@ permalinks:
     post: /p/:slug/
     page: /:slug/
 
+caches:
+  images:
+    dir: :cacheDir/images
+
 params:
     mainSections:
         - posts
