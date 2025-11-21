@@ -81,9 +81,9 @@ jobs:
         run: |
           hugo \
             --gc \
-            --minify \
+            --minify \+
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
-            --ignoreCache
+            --cacheDir "${{ runner.temp }}/hugo_cache"
       - name: Cache save
         id: cache-save
         uses: actions/cache/save@v4
