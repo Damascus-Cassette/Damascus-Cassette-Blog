@@ -1,0 +1,46 @@
+{{- $context := .Context -}}
+{{- $limit := default 3 .Params.limit -}}
+
+
+<section>
+    
+
+    {{ range (where .Context.Site.Pages "Section" "portfolio") }}
+    
+        {{$show:=false}}
+        {{ range first $limit .Pages }} 
+            {{ if (not (default true .Params.funded))}}
+                {{$show = true}}
+            {{end}}
+        {{end}}
+
+        {{if $show}}
+            <h2 class="section-title">
+                Open Proposals:
+            </h2>
+        {{end}}
+        
+        {{ range first $limit .Pages }} 
+            {{ if (not (default true .Params.funded))}}
+                <div class="section-card" style="padding: 10px; width: fit-content">
+                    <div class="section-description">
+                            <a link="{{.Permalink}}"> {{ .Title }} </a>
+                        </div>
+                    </div>
+            {{ end }} 
+        {{ end }}
+    
+    {{ end }}
+    {{/*  <div class="widget-icon">
+        {{ partial "helper/icon" "tag" }}
+    </div>
+    <h2 class="widget-title section-title">{{ T "widget.tagCloud.title" }}</h2>
+    
+    <div class="tagCloud-tags">
+        {{ range first $limit $context.Site.Taxonomies.tags.ByCount }}
+            <a href="{{ .Page.RelPermalink }}">
+                {{ .Page.Title }}
+            </a>
+        {{ end }}
+    </div>  */}}
+</section>

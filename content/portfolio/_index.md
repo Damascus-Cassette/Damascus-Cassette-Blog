@@ -2,7 +2,7 @@
 title: Portfolio
 description:  Completed projects & Showcases
 slug: portfolio
-type: portfolio-category
+layout: portfolio-category
 # image: 'hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg'
 # style:
 #     background: "#2a9d8f"
@@ -18,4 +18,4 @@ menu:
             icon: aperture
 ---
 
-<!-- Contents are currently not included, nor links -->
+Contents are currently not included, nor links
