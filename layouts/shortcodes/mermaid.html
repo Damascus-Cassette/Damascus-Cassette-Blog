@@ -1,0 +1,18 @@
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    smermaid.initialize({ startOnLoad: true, 
+                          theme: 'neutral'});
+</script>
+
+<div class="mermaid">
+
+{{- $lines := split .Inner "\n"  -}}
+{{ range $line:=$lines -}}
+    {{- if strings.ContainsNonSpace $line -}}
+        {{- if not (strings.HasPrefix $line "```") -}}
+            {{ $line }}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+</div>
