@@ -277,7 +277,7 @@
     }
 }
 
-/* Tile style article list */
+/* Tile style article grid */
 .article-list--grid {
     article {
         border-radius: var(--card-border-radius);
@@ -343,6 +343,52 @@
             @include respond(sm) {
                 font-size: 2.2rem;
             }
+        }
+    }
+}
+
+
+.todotxt {
+    div {
+        .item-list{
+            box-shadow: var(--shadow-l1);
+            border-radius: var(--card-border-radius);
+            color: var(--card-text-color-main);
+            background-color: var(--card-background);
+        }
+        .item{
+            border-radius: var(--card-border-radius);
+            &.completed {
+                background-color : fffff
+            }
+        }
+
+        .priority{
+            border-radius: var(--card-border-radius);
+        }
+        .bottomrow{
+            border-radius: var(--card-border-radius);
+        }
+        .toprow{
+            border-radius: var(--card-border-radius);
+        }
+        .chip-startdate{
+            border-radius: var(--card-border-radius);
+        }
+        .chip-duedate{
+            border-radius: var(--card-border-radius);
+        }
+        .chip-context{
+            border-radius: var(--card-border-radius);
+        }
+        .chip-tag{
+            border-radius: var(--card-border-radius);
+        }
+        .chip-kv{
+            border-radius: var(--card-border-radius);
+        }
+        .chip-categories{
+            border-radius: var(--card-border-radius);
         }
     }
 }

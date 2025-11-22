@@ -1,0 +1,51 @@
+<!-- SOURCE PATTERNS FROM: https://github.com/davraamides/todotxt-mode/blob/master/src/patterns.ts -->
+ {{- $ContextRegex                   := `\B@\S+/`                                     -}}
+ {{- $PriorityWithLeadingSpaceRegex  := `^\s*[(][A-Z][)]\B/`                          -}}
+ {{- $PriorityWithTrailingSpaceRegex := `[(][A-Z][)]\s/;`                             -}}
+ {{- $PriorityOnlyRegex              := `[(][A-Z][)]\B/`                              -}}
+ {{- $ProjectRegex                   := `\B\+\S+/`                                    -}}
+ {{- $CreationDateRegex              := `^(?:[(][A-Z][)] )?\s*(\d{4}-\d{2}-\d{2})\s/` -}} 
+ {{- $TagRegex                       := `[^\s:]+:\S+/`                                -}} <!-- 'K:V'-->
+ {{- $TagValueRegex                  := `([^\s:]+):(\S+)/`                            -}} <!-- {K:V} -->
+ {{- $TagDateRegexString             := `"\\b(#TAG#):(\\d{4}-\\d{2}-\\d{2})\\b"`      -}}
+ {{- $CompletedGlobalRegex           := `^\s*x .*$`                                   -}}
+ {{- $CompletedRegex                 := `^\s*x\s`                                     -}}
+
+{{- $lines := split .Inner "\n"  -}}
+```
+<div class="todotxt">
+{{ range $line:=$lines -}}
+    {{- if strings.ContainsNonSpace $line  -}}
+        {{- $_ContextRegex                   := strings.FindRESubmatch $ContextRegex                   $line  -}}
+        {{- $_PriorityWithLeadingSpaceRegex  := strings.FindRE         $PriorityWithLeadingSpaceRegex  $line  -}}
+        {{- $_PriorityWithTrailingSpaceRegex := strings.FindRE         $PriorityWithTrailingSpaceRegex $line  -}}
+        {{- $_PriorityOnlyRegex              := strings.FindRE         $PriorityOnlyRegex              $line  -}}
+        {{- $_ProjectRegex                   := strings.FindRESubmatch $ProjectRegex                   $line  -}}
+        {{- $_TagRegex                       := strings.FindRESubmatch $TagRegex                       $line  -}}
+        {{- $_CreationDateRegex              := strings.FindRE         $CreationDateRegex              $line  -}}
+        {{- $_TagValueRegex                  := strings.FindRESubmatch $TagValueRegex                  $line  -}}
+        {{- $_TagDateRegexString             := strings.FindRESubmatch $TagDateRegexString             $line  -}}
+        {{- $_CompletedGlobalRegex           := strings.FindRE         $CompletedGlobalRegex           $line  -}}
+        {{- $_CompletedRegex                 := strings.FindRE         $CompletedRegex                 $line  -}}
+        {{- $_EndDateRegex := "tex" -}}
+        {{- $_LineAfterDate := "tex" -}}
+
+<div class="item {{if $_CompletedRegex }} completed {{end}}"> <!-- Body -->  
+    <div class="toprow">  <!-- Line --> 
+        <div class="priority"> {{- $_PriorityOnlyRegex -}}  </div> <!-- priority -->
+        <div class="chip-enddate"> {{- $_EndDateRegex -}} </div> <!-- Due Date -->
+        <div class="chip-startdate"> {{- $_CreationDateRegex -}} </div> <!-- Created Date -->
+        <div class="contents"> {{- $_LineAfterDate -}} </div> <!-- Contents -->
+    </div>
+    <div class="bottomrow"> <!-- Footer -->
+        $_ContextRegex:{{- $_ContextRegex -}} {{- range $_ContextRegex  -}}<div class="chip-context"> {{- .Contents -}} </div>{{- end -}} <!-- Contexts as Categories -->
+        $_TagRegex:{{- $_TagRegex -}} {{- range $_TagRegex      -}}<div class="chip-tag"> {{- .Contents -}} </div>{{- end -}} <!-- Tags -->
+        <!-- $_TagValueRegex:{{- $_TagValueRegex -}} {{- range $_TagValueRegex -}}<div class="chip-kv"> {{- .Contents -}} </div>{{- end -}} KV pairs -->
+    </div>
+</div>
+
+
+    {{- end -}}
+{{- end }}
+</div>
+```

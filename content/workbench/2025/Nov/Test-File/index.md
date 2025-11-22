@@ -1,5 +1,5 @@
 ---
-title: Test-File 1
+title: Test-File 0
 description:
 type: workbench
 categories: 
@@ -13,14 +13,13 @@ draft: false
 ---
 
 
-<!-- 
-{{ todo-txt }}
+ 
 ## Tasks
+```txt
 (A) 2022-05-20 2022-05-19 todo +shelves using @tool for #Project user:friend as-link:[Test](other.md) tag:something|else
-    (B) Test other +1
+    x (B) Test other +1
+```
 
-{{ /todo-txt }} 
--->
 
 ## Title
 Contents
