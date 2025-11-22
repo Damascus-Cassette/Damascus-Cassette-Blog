@@ -41,13 +41,13 @@
         {{/*  {{ partialCached "article/components/details" . .RelPermalink }}  */}}
         <div class="article-details">
             {{ if .Params.categories }}
-            <header class="article-category">
+            <!-- <header class="article-category">
                 {{ range (.GetTerms "categories") }}
                     <a href="{{ .RelPermalink }}" {{ with .Params.style }}style="background-color: {{ .background }}; color: {{ .color }};"{{ end }}>
                         {{ .LinkTitle }}
                     </a>
                 {{ end }}
-            </header>
+            </header> -->
             {{ end }}
 
             <div class="article-title-wrapper">

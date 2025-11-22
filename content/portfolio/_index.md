@@ -16,6 +16,7 @@ menu:
         weight: 0
         params:
             icon: aperture
+image : r-levi-siewert-rsiewert-mvi-showreal-f000236.webp
 ---
 
 Contents are currently not included, nor links
