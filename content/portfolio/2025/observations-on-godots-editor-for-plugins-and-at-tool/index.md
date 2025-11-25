@@ -3,8 +3,13 @@ title: Observations on Godot's Editor for Plugins and `@tool`
 image:
 description:
 categories:
+    - Godot
+    - GodotEditor
+    - UI
 tags:
-draft: true
+    - ToolDev
+    - UI
+draft: false
 uuid: dfaa6eda-3e97-4f45-b4bd-ba8880f95cf9
 layout: portfolio
 foam_template:
@@ -17,9 +22,10 @@ license:
 ---
 
 
-Below is an overview of how I understand Godot & it's Editor operates. This *was* meant to be a short pre-ramble for the complex `@tool` UI article, but evolved into something much more in-depth. It's a bit loose since it's based on my experience with godot thus far, and I expect minor inaccuracies. It is the workbench after all!
+Below is an overview of how I understand Godot and it's Editor operates. This *was* meant to be a short pre-ramble for the complex `@tool` UI article, but evolved into something much more in-depth. It's a bit loose since it's based on my experience with godot thus far, and I expect minor inaccuracies. It is the workbench after all!
 
 I'd honestly recommend that anyone reading this to already have some experience in godot, and a tolerance for a lot of words.
+
 
 ---
 
@@ -27,18 +33,19 @@ Any Godot application's principle *structure* is a ref-counted node-tree structu
 
 The Godot editor itself is running in Godot, utilizing *extensions* of the built in classes to interface with the user.
 
-`Node`s are the foundational tree element, and can exist in a "prototype" state (partially initialized) and a fully instantiated state. Nodes are allowed to have a single script attached that, when fully initialized, is effectively (if not actually) an extension/inheritor of the node's base class. Importantly all `@export`ed variables are stored on/about the node regardless of "prototype" state. To varying degrees all base node types have functionality that executes within the game editor and the game engine, with the best example being the control/UI node's adjusting their display as they are being edited. If a Node was part of a scene, it's `.owner` attribute refers to the root node of the scene, and otherwise is null.  
+`Node`s are the foundational tree element, and can exist in a "prototype" state (partially initialized) and a fully instantiated state. Nodes are allowed to have a single script attached that, when fully initialized, is effectively (if not actually) an extension/inheritor of the node's base class. Importantly all `@export`ed variables are stored on/about the node regardless of "prototype" state. To varying degrees all base node types have functionality that executes within the game editor and the game engine, with the best example being the control/UI node's adjusting their display as they are being edited. If a Node was created from a scene, it's `.owner` attribute refers to the root node of the scene, and otherwise is null.  
 
-`Scene`s as noted before are a blueprint of a collection of Nodes, their data (`@export`s and relationships) and associated resources. When loaded into memory they are an instance of `PackedScene`, which uses the `instantiate` function to create the tree in instances, sets `.owner`, attach resources and return it's root.
+`Scene`s are a blueprint of a collection of Nodes, their data (`@export`s and relationships) and associated resources. When loaded into memory they are an instance of `PackedScene`, which uses the `instantiate` function to create the tree in instances, sets `.owner`, attach resources and return it's root.
 
 The Editor primarily changes and adjusts a scene in a "prototype" state through exposing parent-child relationships in a `Tree` in the "Scene" Panel, `@export`ed variables (& functions) in the "Inspector" panel[^1], and signals within the "Node" panel. The way the Editor handles scenes is that there is only 1 loaded scene at any given time, switching scenes dumps the old scene and loads then instantiates that the newly selected scene. Each exposed property in the inspector is an inbuilt scene instance setup with the target, the attr, and a reference to the editor autoload `EditorUndoRedoManager`. When any property is edited it registers the action directly to the `EditorUndoRedoManager`, rather than going through any intermediatory interface that registers do-undo like blender's property system.
 
-For the godot-user's side (the app-game developer) we can utilize `@tool` in a script to allow a script to be fully instantiated & running inside the editor. This is useful *and* dangerous because it's universal. All relevant functions such as `_process()` and `_input()` are called regardless of if the scene is in the editor's 'viewport' or instantiated elsewhere in the editor, and we are left to check if `Engine.is_editor_hint() == true` to change behavior between contexts.
+For the godot-user's side (the app-game developer) we can utilize `@tool` in a script to allow a script to be fully instantiated & running inside the editor. This is useful *and* dangerous because it's universal. All relevant functions such as `_process()` and `_input()` are called regardless of if the scene is in the editor's 'viewport' or instantiated elsewhere in the editor, and we are left to check if `Engine.is_editor_hint() == true` to change behavior between contexts [^2]
 
 Scenes are just dif-snapshots of node structures in memory, which can be a very powerful tool *but* one that can mix logic & data in a way that can be detrimental to most games if used as a regular save system. If using an inbuilt type to serialize data would highly recommend using an indirection of `Resources` and sub-Resources for saving game progression & inventory data, with the knowledge that loading resources from disk can *alter data on load* and namespace changes cannot be easily accounted for unless loading then converting the data.
 
 
 While not entirely accurate, Godot's Editor structure is *generally* like so:
+
 
 ``` bash
 Godot_Process
@@ -63,6 +70,7 @@ Godot_Process
 This can be explored through a tool like this!
 https://github.com/TobiasKozel/godot_self_inspect
 
+
 Regardless of the exactness of this structure, I want to point that the data being edited within godot is running within the UI in a nested ui location.
 Currently the only way to access the currently loaded scene is to use special methods provided in the `EditorInspectorPlugin` class, or if a node in our scene is a tool script we can use `owner`.
 
@@ -76,9 +84,10 @@ My next workbench post will be about creating a complex UI system that can handl
 ---
 
 
+
 [^1] Generally, we can expose virtual variables with `_get_properties()->Dict`, change viewing options of variables with the `@export` family of wrappers, or override display of properties with an `EditorInspectorPlugin`. Exposed functions must have `@tool` in the script header. More on all that momentarily! 
 
-
+[^2] I find myself wishing for a lot of things in developing tools for the godot editor, but a better delineation between contexts in tool scripts is certainly up there!
 
 <!-- As a tool developer I find myself wishing 
 - For a better inbuilt delination between Node instance context leading node logic
