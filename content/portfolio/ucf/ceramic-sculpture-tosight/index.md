@@ -1,5 +1,5 @@
 ---
-title: Ceramic Sculpture Territory of Sight
+title: UCF: Ceramic Sculpture Territory of Sight
 description:
 layout: portfolio
 categories:

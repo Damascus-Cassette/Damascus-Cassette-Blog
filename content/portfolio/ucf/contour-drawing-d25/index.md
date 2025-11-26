@@ -1,5 +1,5 @@
 ---
-title: contour-drawing-d25
+title: Contour Drawing D25
 description:
 layout: portfolio
 categories:

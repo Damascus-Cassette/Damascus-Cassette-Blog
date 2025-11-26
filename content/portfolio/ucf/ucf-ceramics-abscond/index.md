@@ -1,5 +1,5 @@
 ---
-title: Abscond
+title: UCF: Ceramic Sculpture Abscond
 description:
 layout: portfolio
 

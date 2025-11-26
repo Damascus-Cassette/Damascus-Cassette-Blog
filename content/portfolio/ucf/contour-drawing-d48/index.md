@@ -1,5 +1,5 @@
 ---
-title: contour-drawing-d48
+title: Contour Drawing D48
 description:
 layout: portfolio
 categories:

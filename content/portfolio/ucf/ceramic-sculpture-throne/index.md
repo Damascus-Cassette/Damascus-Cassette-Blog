@@ -1,5 +1,5 @@
 ---
-title: ceramic-sculpture-throne
+title: UCF: Ceramic Sculpture Throne
 description:
 layout: portfolio
 categories:

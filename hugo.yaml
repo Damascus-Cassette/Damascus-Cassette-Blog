@@ -202,7 +202,7 @@ params:
         cover:
             enabled: true
         content:
-            enabled: true
+            enabled: false
 
 ### Custom menu
 ### See https://stack.jimmycai.com/config/menu

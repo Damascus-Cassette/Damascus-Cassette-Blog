@@ -1,5 +1,5 @@
 ---
-title: mvi-pipeline-release-1
+title: Mvi Marketing Release 1
 description:
 layout: portfolio
 categories:

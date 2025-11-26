@@ -1,5 +1,5 @@
 ---
-title: contour-drawing-woman-study-2
+title: Contour Drawing Woman Study 2
 description:
 layout: portfolio
 categories:

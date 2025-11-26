@@ -11,11 +11,11 @@ tags:
     - UI
 draft: false
 uuid: dfaa6eda-3e97-4f45-b4bd-ba8880f95cf9
-layout: portfolio
+layout: workbench
 foam_template:
-  name: Blog portfolio
-  description: Blog portfolio file
-  filepath: 'Damascus-Cassette-Blog/content/portfolio/2025/observations-on-godots-editor-for-plugins-and-at-tool/index.md'
+  name: Blog workbench
+  description: Blog workbench file
+  filepath: 'Damascus-Cassette-Blog/content/workbench/2025/observations-on-godots-editor-for-plugins-and-at-tool/index.md'
 date: 2025-11-24 
 lastModified: 2025-11-24 
 license:
